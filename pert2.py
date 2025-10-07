@@ -1,3 +1,4 @@
+#INI MOBIL SAYA DAN KAMU
 #ini definisi class aja, jadi belum dijalankan
 class Mobil:
     '''Kelas untuk merepresentasikan mobil buatan saya'''
@@ -21,7 +22,6 @@ class Mobil:
 mobil_saya = Mobil(10)
 mobil_kamu = Mobil()
 mobil_saya.injak_gas()
-mobil_saya.warna='Hijau'
 mobil_kamu.warna='merah'
 #Cara jalankan 1
 mobil_kamu.info()
@@ -32,3 +32,29 @@ print("========")
 print('Mobil Saya\n','\twarna\t\t=', mobil_saya.warna, '\n\tKecepatan\t=', mobil_saya.kecepatan, 'km/h')
 
 print('Mobil Kamu\n','\twarna\t\t=', mobil_kamu.warna, '\n\tKecepatan\t=', mobil_saya.kecepatan, 'km/h')
+
+
+print("=============")
+#Ini Tentang Lingkaran
+class Lingkaran:
+    '''Kelas untuk menghitung luas dan keliling lingkaran saya'''
+    def __init__(self, jarijari=0):
+        self.jarijari=jarijari
+        self.luas=0
+        self.keliling=0
+    '''Metode mengukur luas nya'''
+    def hitungluas(self):
+        self.luas=self.jarijari**2*3.14
+    '''Metode mengukur Kelilingnya'''
+    def hitungkeliling(self):
+        self.keliling=self.jarijari*2*3.14
+    '''Metode untuk menampilkan luas dan keliling lingkaran'''
+    def info(self):
+        print('Luas Lingkaran= ', self.luas)
+        print('keliling Lingkaran= ', self.keliling)
+
+#Ayo jalankan
+lingkaran_saya=Lingkaran(7)
+lingkaran_saya.hitungkeliling()
+lingkaran_saya.hitungluas()
+lingkaran_saya.info()

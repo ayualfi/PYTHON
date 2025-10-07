@@ -73,18 +73,24 @@ class AC:
     def matikan():
         self.statusAC='mati'
     def hidupkan():
-        self.statusAC='hidup'
+        self.statusAC=='hidup'
     def naikkansuhu(self):
-        self.suhu +=1
+        if statusAC='hidup':
+            self.suhu +=1
+        else:
+            print('AC Mati, hidupkan dulu')
     def turunkansuhu(self):
-        self.suhu -=1
+        if statusAC=='hidup'
+            self.suhu -=1
+        else:
+            print('AC mati, hidupkan dulu')
     def info(self):
         print('Status= ', self.statusAC)
         print('Suhu AC= ', self.suhu)
 
 #Ayo jalan
 AC_saya=AC()
-AC_saya.infostatus()
+AC_saya.hidupkan()
 AC_saya.naikkansuhu()
 AC_saya.info()
         

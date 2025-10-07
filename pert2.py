@@ -1,5 +1,8 @@
 #INI MOBIL SAYA DAN KAMU
 #ini definisi class aja, jadi belum dijalankan
+from typing import Self
+
+
 class Mobil:
     '''Kelas untuk merepresentasikan mobil buatan saya'''
     def __init__(self, kecepatan=0, warna='Biru'):
@@ -58,3 +61,32 @@ lingkaran_saya=Lingkaran(7)
 lingkaran_saya.hitungkeliling()
 lingkaran_saya.hitungluas()
 lingkaran_saya.info()
+
+print("=============")
+#Ini Tentang AC
+class AC:
+    '''Kelas untuk menginformasikan status dan suhu AC'''
+    def __init__(self, statusAC='mati', suhu=16):
+        self.statusAC=statusAC
+        self.suhu=suhu
+    '''Metode mengetahui status AC'''
+    def matikan():
+        self.statusAC='mati'
+    def hidupkan():
+        self.statusAC='hidup'
+    def naikkansuhu(self):
+        self.suhu +=1
+    def turunkansuhu(self):
+        self.suhu -=1
+    def info(self):
+        print('Status= ', self.statusAC)
+        print('Suhu AC= ', self.suhu)
+
+#Ayo jalan
+AC_saya=AC()
+AC_saya.infostatus()
+AC_saya.naikkansuhu()
+AC_saya.info()
+        
+
+

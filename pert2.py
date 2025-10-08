@@ -65,34 +65,32 @@ lingkaran_saya.info()
 print("=============")
 #Ini Tentang AC
 class AC:
-    '''Kelas untuk menginformasikan status dan suhu AC'''
-    def __init__(self, statusAC='mati', suhu=16):
-        self.statusAC=statusAC
+    '''Kelas untuk merepresentasikan AC rumah saya'''
+    def __init__(self, suhu=16, statusAC='hidup'):
         self.suhu=suhu
-    '''Metode mengetahui status AC'''
-    def matikan():
+        self.statusAC=statusAC
+    def hidupkan(self):
+        self.statusAC='hidup'
+        if self.suhu==0:
+            self.suhu=16
+    def matikan(self):
         self.statusAC='mati'
-    def hidupkan():
-        self.statusAC=='hidup'
-    def naikkansuhu(self):
-        if statusAC='hidup':
+        self.suhu=0
+    def naikkan(self):
+        if self.statusAC=='hidup':
             self.suhu +=1
         else:
-            print('AC Mati, hidupkan dulu')
-    def turunkansuhu(self):
-        if statusAC=='hidup'
-            self.suhu -=1
+            print('AC mati, hidupkan dulu')
+    def turunkan(self):
+        if self.statusAC=='hidup':
+            self.suhu-=1
         else:
             print('AC mati, hidupkan dulu')
     def info(self):
-        print('Status= ', self.statusAC)
-        print('Suhu AC= ', self.suhu)
-
-#Ayo jalan
+        print('Status AC= ', self.statusAC)
+        print('Suhu= ', self.suhu)
+#Ayo jalankan
 AC_saya=AC()
 AC_saya.hidupkan()
-AC_saya.naikkansuhu()
+AC_saya.naikkan()
 AC_saya.info()
-        
-
-

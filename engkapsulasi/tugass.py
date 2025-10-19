@@ -1,7 +1,6 @@
 class rekening:
-    def __init__(self, saldo=0, transfer='TF oleh'):
+    def __init__(self, saldo=0):
         self.__saldo=saldo
-        self.__transfer=transfer
     def set_setoran(self, nominal):
         self.__saldo += nominal
     def get_setoran(self):

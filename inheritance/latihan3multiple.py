@@ -1,44 +1,43 @@
 class Orang:
-    def __init__(self, name=""):
-        self.nama=name
-    def namamu(self):
+    def __init__(self, nama_mu=""):
+        self.nama=nama_mu
+    def siapa_nama_mu (self):
         print("Nama= ", self.nama)
-class Mahasiswa(Orang):
-    def __init__(self, name="", NIM="", prodi=""):
-        self.nim=NIM
-        self.jurusan=prodi
-    def nim_mu(self):
-        print("Nim mu= ", self.nim_mu)
-    def jurusan_mu(self):
+class Mahasiswa:
+    def __init__(self, nim_mu="", jurusan_mu=""):
+        self.nim=nim_mu
+        self.jurusan=jurusan_mu
+    def berapa_nim_mu(self):
+        print("NIM= ", self.nim)
+    def apa_jurusan_mu(self):
         print("Jurusan= ", self.jurusan)
-class Pegawai(Orang, Mahasiswa):
-    def __init__(self, name="", NIM="", prodi="", NIP="", jabatan=""):
-        self.nip=NIP
-        self.jabatan=jabatan
-    def nip_mu(self):
+class Pegawai:
+    def __init__(self, nip_mu="", jabatan_mu=""):
+        self.nip=nip_mu
+        self.jabatan=jabatan_mu
+    def berapa_nip_mu(self):
         print("NIP= ", self.nip)
-    def jabatan_mu(self):
+    def apa_jabatan_mu(self):
         print("Jabatan= ", self.jabatan)
-class Asisten_riset(Mahasiswa, Pegawai):
-    def __init__(self, name="", NIM="", prodi="", NIP="", jabatan="", proyek=""):
-        self.proyek=proyek
-    def proyekmu(self):
+class Asisten_Riset(Orang, Mahasiswa, Pegawai):
+    def __init__(self, proyek_mu=""):
+        self.proyek=proyek_mu
+    def apa_proyek_mu(self):
         print("Proyek= ", self.proyek)
     def data_lengkap(self):
-        self.nama()
-        self.nim()
-        self.jurusan()
-        self.nip()
-        self.jabatan()
-        self.proyek()
+        self.siapa_nama_mu()
+        self.berapa_nim_mu()
+        self.apa_jurusan_mu()
+        self.berapa_nip_mu()
+        self.apa_jabatan_mu()
+        self.apa_proyek_mu()
 
-orang1=Asisten_riset()
-orang1.nama="Ayu Alfi Hidayati"
+orang1=Asisten_Riset()
+orang1.nama="Ayu Alfi H"
 orang1.nim="2421400175"
-orang1.jurusan="IF"
-orang1.nip="2222"
-orang1.jabatan="Anak dosen"
-orang1.proyek="Nurul Jadid Santri Information"
+orang1.jurusan="Informatika"
+orang1.nip="00002"
+orang1.jabatan="Dosen"
+orang1.proyek="Nurul Jadid Santri Reporting"
 orang1.data_lengkap()
-        
-        
+    

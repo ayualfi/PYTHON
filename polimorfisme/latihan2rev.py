@@ -19,7 +19,7 @@ class Lingkaran (BangunLengkung):
     def hitung_luas(self):
         return 3.14*self.__radius**2
     def hitung_volume(self):
-        print("Lingkaran tidak memiliki volume")
+        return "Lingkaran tidak memiliki volume"
 class Tabung(BangunLengkung):
     def __init__(self, radius=0, height_tabung=0):
         self.__radius=radius
@@ -39,13 +39,13 @@ class Tabung(BangunLengkung):
 
 def info(Bentuk):
     print("Informasi Bangun Lengkung: ", type(Bentuk).__name__)
-    print("Luas: ", Bentuk.get_data())
+    print("Radius: ", Bentuk.get_data())
     print("Luas: ", Bentuk.hitung_luas())
     print("Volume: ", Bentuk.hitung_volume())
     print(".."*30)
 
 koin=Lingkaran(4)
-kaleng=Tabung(0)
+kaleng=Tabung()
 kaleng.set_data(10)
 kaleng.set_heightT(10)
 kaleng.get_data()

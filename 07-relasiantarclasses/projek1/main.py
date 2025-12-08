@@ -45,7 +45,7 @@ def add_transaction():
             break
 def show_transactions():
     for trans in transactions:
-        trans.info()
+        trans.into()
         print('')
 while True:
     print('1. Add product')
@@ -66,3 +66,14 @@ while True:
         break
     else:
         print('Your choice was not found')
+
+#IMPLEMENTASINYA
+#BUAT PRODUCT
+p=Product(1, "Pulpen", 2000, 10)
+#RELASI : Detail PUNYA Produk
+d=Detail(p, 3)
+#RELASI : Transaction PUNYA Detail
+t=Transaction("T001", "2025-12-08", "Alfy")
+t.add_items(d)
+#Tampilkan
+t.show_items()

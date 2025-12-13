@@ -22,7 +22,10 @@ class latihan1(Tk):
         label_judul=Label(frame,
                           text="Login User",
                           font=("Arial", 12, "bold"),
-                          bg="lightgray"
+                          bg="darkblue",
+                          fg="lightgray",
+                          width=10,
+                          height=2
         )
         label_judul.pack(pady=10)
         label_username=Label(frame,
@@ -48,7 +51,7 @@ class latihan1(Tk):
                          text="Log in",
                          font=("Arial", 12, "bold"),
                          width=10,
-                         bg="black",
+                         bg="darkblue",
                          bd=3,
                          relief="ridge",
                          highlightthickness=3,
@@ -59,7 +62,7 @@ class latihan1(Tk):
                          text="Cancel",
                          font=("Arial", 12, "bold"),
                          width=10,
-                         bg="black",
+                         bg="darkblue",
                          bd=3,
                          relief="ridge",
                          highlightthickness=3,

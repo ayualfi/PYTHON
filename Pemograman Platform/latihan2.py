@@ -6,4 +6,7 @@ window.geometry("300x200")
 icon = PhotoImage(file='Pemograman Platform/A (3).png')
 window.iconphoto(True,icon)
 window.config(bg="#20244d")
+label = Label(window,
+              text="Hi Everyone",
+              )
 window.mainloop()

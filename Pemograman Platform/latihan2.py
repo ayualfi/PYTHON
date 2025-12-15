@@ -34,6 +34,8 @@ main_label.pack()
 input_frame=Frame(main_frame,
                  bg='#20244d')
 input_frame.pack(fill="x")
+scroll=Scrollbar(input_frame)
+scroll.grid(row=4, column=2, sticky="ns")
 input_frame.columnconfigure(1, weight=1)
 #contain
 #==================
@@ -100,10 +102,66 @@ name_label=Label(input_frame,
                  font=('Arial', 15)
                  )
 name_label.grid(row=4, column=0, sticky="w", padx=5)
+form=Text(input_frame,
+                 fg='#fafcfc',
+                 bg='#3b4ba8',
+                 font=('Arial', 15),
+                 height=2,
+                 wrap="word",
+                 yscrollcommand=scroll.set
+                 )
+form.grid(row=4, column=1, sticky="w", padx=5)
+scroll.config(command=form.yview)
+#============================
+name_label=Label(input_frame,
+                 text='Where do you get university?',
+                 fg='#fafcfc',
+                 bg='#20244d',
+                 font=('Arial', 15)
+                 )
+name_label.grid(row=5, column=0, sticky="w", padx=5)
 form=Entry(input_frame,
                  fg='#fafcfc',
                  bg='#3b4ba8',
                  font=('Arial', 15)
                  )
-form.grid(row=4, column=1, sticky="ew", padx=5)
+form.grid(row=5, column=1, sticky="ew", padx=5)
+#==================================
+name_label=Label(input_frame,
+                 text='What study program do you take?',
+                 fg='#fafcfc',
+                 bg='#20244d',
+                 font=('Arial', 15)
+                 )
+name_label.grid(row=6, column=0, sticky="w", padx=5)
+form=Entry(input_frame,
+                 fg='#fafcfc',
+                 bg='#3b4ba8',
+                 font=('Arial', 15)
+                 )
+form.grid(row=6, column=1, sticky="ew", padx=5)
+#================================
+name_label=Label(input_frame,
+                 text='What is your hobby',
+                 fg='#fafcfc',
+                 bg='#20244d',
+                 font=('Arial', 15)
+                 )
+name_label.grid(row=7, column=0, sticky="w", padx=5)
+form=Entry(input_frame,
+                 fg='#fafcfc',
+                 bg='#3b4ba8',
+                 font=('Arial', 15)
+                 )
+form.grid(row=7, column=1, sticky="ew", padx=5)
+#Form submit
+submit_button=Button(main_frame,
+                     text="Submit",
+                     fg='#fafcfc',
+                     bg="#000000",
+                     pady=5,
+                     padx=10,
+                     font=("Arial", 15)
+                     )
+submit_button.pack(pady=60)
 window.mainloop()

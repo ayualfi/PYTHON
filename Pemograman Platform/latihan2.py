@@ -155,13 +155,30 @@ form=Entry(input_frame,
                  )
 form.grid(row=7, column=1, sticky="ew", padx=5)
 #Form submit
-submit_button=Button(main_frame,
-                     text="Submit",
+submit_frame=Frame(main_frame, 
+                   bg='#0519a8',
+                   padx=3,
+                   pady=3,
+                   relief=SOLID)
+submit_frame.pack(pady=50)
+submit_button=Button(submit_frame,
+                     text="SUBMIT ",
                      fg='#fafcfc',
-                     bg="#000000",
+                     bg='#3b4ba8',
                      pady=5,
                      padx=10,
-                     font=("Arial", 15)
+                     font=("Arial", 15),
+                     relief=SOLID
                      )
-submit_button.pack(pady=60)
+submit_button.grid(row=0, column=0)
+submit_button=Button(submit_frame,
+                     text="CANCEL",
+                     fg='#fafcfc',
+                     bg='#3b4ba8',
+                     pady=5,
+                     padx=10,
+                     font=("Arial", 15),
+                     relief=SOLID
+                     )
+submit_button.grid(row=0, column=3, sticky="e")
 window.mainloop()

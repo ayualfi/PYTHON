@@ -1,15 +1,15 @@
 import turtle
 
-t=turtle.Turtle
+t=turtle.Turtle()
 
 #translasi
-t.goto(50, 50)
+t.goto(-50, 50)
 
 #Rotasi
-t.left(45)
-t.forward(100)
+t.left(90)
+t.forward(200)
 
-#skala
-t.shapesize(2,2)
+#skala turtle(pen)  nya aja
+t.shapesize(10,10)
 
 turtle.done()

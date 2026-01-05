@@ -1,11 +1,14 @@
 import turtle
+import time
+
 
 t2 = turtle.Turtle()
 t2.color('#fc03ba', '#fc8ddf')
+time.sleep(0.90)
 points = [
     (0, 140),
     (-80, 160),
-    (-120, 100),
+    (-130, 100),
     (-140, 40),
     (-110, 0),
     (-40,-60),
@@ -13,7 +16,7 @@ points = [
     (40, -60),
     (110,0),
     (140,40),
-    (120,100),
+    (130,100),
     (80, 160),
     (0, 140)
 ]
@@ -21,6 +24,7 @@ t2.begin_fill() #agar warna nya nge fill
 for x, y in points:
     t2.goto(x,y)
 t2.end_fill() #agar warna nya nge fill
+
 
 
 t1 = turtle.Turtle()

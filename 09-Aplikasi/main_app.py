@@ -55,7 +55,7 @@ class MainApp(CTk):
             fg_color= '#3b4ba8',
             hover_color= '#20244d',
             anchor='w',
-            command=lambda:self.load_page(UserPage) #memanggil dashboard
+            command=lambda:self.load_page(UserPage) #memanggil user
         )
         self.btn_user.pack(fill = 'x', padx=10)
 # product button

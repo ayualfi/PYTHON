@@ -31,7 +31,8 @@ class AppLogin(CTk):
                                width=200,
                                height=40,
                                corner_radius=15,
-                               fg_color='#c5cce0')
+                               fg_color='#e9e9f5',
+                               text_color='black')
         self.username.grid(row=1, column=0, padx=30, pady=10, sticky="ew")
         # self.tombol_login.grid_columnconfigure(1, weight=5)
 #Password
@@ -40,7 +41,8 @@ class AppLogin(CTk):
                                width=200,
                                height=40,
                                corner_radius=15,
-                               fg_color='#c5cce0',
+                               fg_color='#e9e9f5',
+                               text_color='black',
                                show='*')
         self.password.grid(row=2, column=0, padx=30, pady=10, sticky="ew")
         # self.tombol_login.grid_columnconfigure(2, weight=5)

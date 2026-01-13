@@ -138,7 +138,7 @@ class UserPage(CTkFrame):
 class UserForm(CTkToplevel):
     def __init__(self, parent, user=None):
         super().__init__(parent,
-                         fg_color="yellow")
+                         fg_color="white")
         self.parent = parent
         self.user = user
         title = 'ubah pengguna' if self.user else 'tambah pengguna'
@@ -159,7 +159,8 @@ class UserForm(CTkToplevel):
                             text=title,
                             font=('century gothic', 24, 'bold'), 
                             anchor='w', 
-                            compound='left')
+                            compound='left',
+                            text_color='#20244d')
         self.title.pack(pady=10, padx=10, anchor='w')
 #Frame body
         self.frame_body = CTkFrame(self,
@@ -170,68 +171,92 @@ class UserForm(CTkToplevel):
 #Label id
         self.label_id = CTkLabel(self.frame_body,
                               text='ID Pengguna',
-                              font=('century gothic', 12, 'bold'))
+                              font=('century gothic', 12, 'bold'),
+                              text_color='#3b4ba8')
         self.label_id.grid(row=0, column=0, padx=10, pady=10, sticky='w')
 #entry id
         self.entry_id = CTkEntry(self.frame_body,
                                  width=250,
                                  height=30,
-                                 corner_radius=10)
+                                 corner_radius=10,
+                                 fg_color='white',
+                                 border_color="black",
+                                 text_color='black')
         self.entry_id.grid(row=0, column=1, padx=10, pady=10)
 #Label nama
         self.label_nama = CTkLabel(self.frame_body,
                               text='nama Pengguna',
-                              font=('century gothic', 12, 'bold'))
+                              font=('century gothic', 12, 'bold'),
+                              text_color='#3b4ba8')
         self.label_nama.grid(row=1, column=0, padx=10, pady=10, sticky='w')
 #entry nama
         self.entry_nama = CTkEntry(self.frame_body,
                                  width=250,
                                  height=30,
-                                 corner_radius=10)
+                                 corner_radius=10,
+                                 fg_color='white',
+                                 border_color="black",
+                                 text_color='black')
         self.entry_nama.grid(row=1, column=1, padx=10, pady=10)
 #Label telepon
         self.label_telepon = CTkLabel(self.frame_body,
                               text='Telepon Pengguna',
-                              font=('century gothic', 12, 'bold'))
+                              font=('century gothic', 12, 'bold'),
+                              text_color='#3b4ba8')
         self.label_telepon.grid(row=2, column=0, padx=10, pady=10, sticky='w')
 #entry telepon
         self.entry_telepon = CTkEntry(self.frame_body,
                                  width=250,
                                  height=30,
-                                 corner_radius=10)
+                                 corner_radius=10,
+                                 fg_color='white',
+                                 border_color="black",
+                                 text_color='black')
         self.entry_telepon.grid(row=2, column=1, padx=10, pady=10)
 #Label alamat
         self.label_alamat = CTkLabel(self.frame_body,
                               text='alamat Pengguna',
-                              font=('century gothic', 12, 'bold'))
+                              font=('century gothic', 12, 'bold'),
+                              text_color='#3b4ba8')
         self.label_alamat.grid(row=3, column=0, padx=10, pady=10, sticky='w')
 #entry alamat
         self.entry_alamat = CTkEntry(self.frame_body,
                                  width=250,
                                  height=30,
-                                 corner_radius=10)
+                                 corner_radius=10,
+                                 fg_color='white',
+                                 border_color="black",
+                                 text_color='black')
         self.entry_alamat.grid(row=3, column=1, padx=10, pady=10)
 #Label username
         self.label_username = CTkLabel(self.frame_body,
                               text='username Pengguna',
-                              font=('century gothic', 12, 'bold'))
+                              font=('century gothic', 12, 'bold'),
+                              text_color='#3b4ba8')
         self.label_username.grid(row=4, column=0, padx=10, pady=10, sticky='w')
 #entry username
         self.entry_username = CTkEntry(self.frame_body,
                                  width=250,
                                  height=30,
-                                 corner_radius=10)
+                                 corner_radius=10,
+                                 fg_color='white',
+                                 border_color="black",
+                                 text_color='black')
         self.entry_username.grid(row=4, column=1, padx=10, pady=10)
 #Label password
         self.label_password = CTkLabel(self.frame_body,
                               text='password Pengguna',
-                              font=('century gothic', 12, 'bold'))
+                              font=('century gothic', 12, 'bold'),
+                              text_color='#3b4ba8')
         self.label_password.grid(row=5, column=0, padx=10, pady=10, sticky='w')
 #entry password
         self.entry_password = CTkEntry(self.frame_body,
                                  width=250,
                                  height=30,
-                                 corner_radius=10)
+                                 corner_radius=10,
+                                 fg_color='white',
+                                 border_color="black",
+                                 text_color='black')
         self.entry_password.grid(row=5, column=1, padx=10, pady=10)
 
 #button save

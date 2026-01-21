@@ -1,6 +1,7 @@
 from customtkinter import CTk, CTkFrame, CTkButton, CTkLabel
 from pages.dashboard import DashboardPage
-# from pages.user import UserPage
+from pages.anggota import AnggotaPage
+from pages.kegiatan import KegiatanPage
 
 class MainApp(CTk):
     def __init__(self):
@@ -67,7 +68,8 @@ class MainApp(CTk):
             fg_color= "#4256c6",
             hover_color= "#4256c6",
             anchor='w',
-            font=('century gothic', 16, 'bold')
+            font=('century gothic', 16, 'bold'),
+            command=lambda:self.load_page(KegiatanPage)
         )
         self.btn_kegiatan.pack(side='right', padx=1, pady=10)
 #Fungsi btn_kegiatan ketika hover
@@ -87,8 +89,8 @@ class MainApp(CTk):
             fg_color= "#4256c6",
             hover_color= "#4256c6",
             anchor='w',
-            font=('century gothic', 16, 'bold')
-            # command=lambda:self.load_page(UserPage) #memanggil user
+            font=('century gothic', 16, 'bold'),
+            command=lambda:self.load_page(AnggotaPage) #memanggil user
         )
         self.btn_user.pack(side='right', padx=1, pady=10)
 #Fungsi btn_user ketika hover

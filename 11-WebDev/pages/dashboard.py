@@ -28,7 +28,7 @@ class DashboardPage(CTkFrame):
 #Card 1
         self.kartu_satu=CTkFrame(self,
                                height=220,
-                               fg_color="#f9fc38",)
+                               fg_color="#030b85",)
         self.kartu_satu.grid(row=1,
                            column=0,
                            padx=50,
@@ -53,8 +53,8 @@ class DashboardPage(CTkFrame):
                                   text='Total anggota: '+str(total),
                                   height=50,
                                   corner_radius=10,
-                                  fg_color= "#f2f283",
-                                  hover_color= "#b8bb12",
+                                  fg_color= "#4256c6",
+                                  hover_color= "#0356fc",
                                   text_color='black',
                                   font=('century gothic', 25, 'bold')
         )
@@ -66,7 +66,7 @@ class DashboardPage(CTkFrame):
 #Card 2
         self.kartu_dua=CTkFrame(self,
                                height=220,
-                               fg_color="#7dfc38",)
+                               fg_color="#030b85",)
         self.kartu_dua.grid(row=1,
                            column=1,
                            padx=50,
@@ -91,8 +91,8 @@ class DashboardPage(CTkFrame):
                                   text='Total kegiatan: '+str(total),
                                   height=50,
                                   corner_radius=10,
-                                  fg_color= "#94f283",
-                                  hover_color= "#4abb12",
+                                  fg_color= "#4256c6",
+                                  hover_color= "#0356fc",
                                   text_color='black',
                                   font=('century gothic', 25, 'bold'),
                                   state='normal'
@@ -105,7 +105,7 @@ class DashboardPage(CTkFrame):
 #Card 2
         self.kartu_tiga=CTkFrame(self,
                                height=220,
-                               fg_color="#fc38f2",)
+                               fg_color="#030b85",)
         self.kartu_tiga.grid(row=1,
                            column=2,
                            padx=50,
@@ -132,8 +132,8 @@ class DashboardPage(CTkFrame):
                                   text=f"Saldo:{saldo}\nMasuk: {masuk}\nKeluar: {keluar}",
                                   height=50,
                                   corner_radius=10,
-                                  fg_color= "#f283e9",
-                                  hover_color= "#bb12aa",
+                                  fg_color= "#4256c6",
+                                  hover_color= "#0356fc",
                                   text_color='black',
                                   font=('century gothic', 25, 'bold'),
                                   state='normal'

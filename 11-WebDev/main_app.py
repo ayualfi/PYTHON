@@ -2,6 +2,7 @@ from customtkinter import CTk, CTkFrame, CTkButton, CTkLabel
 from pages.dashboard import DashboardPage
 from pages.anggota import AnggotaPage
 from pages.kegiatan import KegiatanPage
+from pages.keuangan import KeuanganPage
 
 class MainApp(CTk):
     def __init__(self):
@@ -48,7 +49,8 @@ class MainApp(CTk):
             fg_color= "#4256c6",
             hover_color= "#4256c6",
             anchor='w',
-            font=('century gothic', 16, 'bold')
+            font=('century gothic', 16, 'bold'),
+            command=lambda:self.load_page(KeuanganPage) #memanggil keuangan
         )
         self.btn_keuangan.pack(side='right', padx=1, pady=10)
 #Fungsi btn_keuangan ketika hover

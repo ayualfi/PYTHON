@@ -14,18 +14,20 @@ class KegiatanPage(CTkFrame):
         self.judul=CTkLabel(self,
                             text='Kegiatan Web Development Community',
                             text_color='black',
-                            font=('century gothic', 50, 'bold'),
+                            font=('century gothic', 30, 'bold'),
                             fg_color="#ffffff",
-                            height=100,
+                            height=50,
                             corner_radius=10
                             )
         self.judul.grid(row=0,
                         column=0,
                         columnspan=3,
                         padx=50,
-                        pady=7,
+                        pady=2,
                         sticky='nsew')
-        self.grid_columnconfigure(0, weight=1)
+        self.grid_columnconfigure(0, weight=1)  # kiri
+        self.grid_columnconfigure(1, weight=0)  # tengah (card)
+        self.grid_columnconfigure(2, weight=1)  # kanan
         self.grid_rowconfigure(0, weight=0)
         self.grid_rowconfigure(1, weight=1)
         self.grid_rowconfigure(2, weight=1)
@@ -34,14 +36,18 @@ class KegiatanPage(CTkFrame):
 #=========================================
 #Card 1 SELURUH KEGIATAN
         self.kartu_satu=CTkFrame(self,
-                               height=80,
-                               fg_color="#0611ad",)
+                               height=120,
+                               fg_color="#ffffff",
+                               width=800,
+                               border_width=2,
+                               border_color='#0611ad',)
         self.kartu_satu.grid(row=1,
-                           column=0,
-                           columnspan=3,
+                           column=1,
+                           #columnspan=2,
                            padx=50,
-                           pady=1,
-                           sticky='nsew')
+                           pady=10,
+                           #sticky='nsew'
+                           )
         self.kartu_satu.columnconfigure(0, weight=1)#Konfigurasi kolom didalam frame
         self.kartu_satu.rowconfigure((0,1), weight=1)#Konfigurasi baris didalam frame
         self.kartu_satu.grid_propagate(False)
@@ -50,17 +56,18 @@ class KegiatanPage(CTkFrame):
                                   text='Total Kegiatan',
                                   text_color='black',
                                   anchor='center',
+                                  fg_color='transparent',
                                   font=('century gothic', 20, 'bold'),
         )
         self.label_total.grid(row=0,
                            column=0,
                            padx=10,
-                           pady=0)
+                           pady=(6, 6))
 # isi total kegiatan 
         total=self.get_total_kegiatan()
         self.btn_total = CTkButton(self.kartu_satu,
                                   text='Total kegiatan: '+str(total)+'\nKlik untuk melihat, menambah, mengedit, atau menambah kegiatan',
-                                  height=40,
+                                  height=70,
                                   corner_radius=10,
                                   fg_color= "#4256c6",
                                   hover_color= "#0356fc",
@@ -71,18 +78,22 @@ class KegiatanPage(CTkFrame):
         self.btn_total.grid(row=1,
                            column=0,
                            padx=5,
-                           pady=5)
+                           pady=2)
 #==================================================
 #Card 2 KEGIATAN MENDATANG
         self.kartu_dua=CTkFrame(self,
-                               height=80,
-                               fg_color="#03850E",)
+                               height=120,
+                               fg_color="#ffffff",
+                               width=800,
+                               border_width=2,
+                               border_color='#0611ad',)
         self.kartu_dua.grid(row=2,
-                           column=0,
-                           columnspan=3,
+                           column=1,
+                           #columnspan=3,
                            padx=50,
-                           pady=1,
-                           sticky='nsew')
+                           pady=10,
+                           #sticky='nsew'
+                           )
         self.kartu_dua.columnconfigure(0, weight=1)#Konfigurasi kolom didalam frame
         self.kartu_dua.rowconfigure((0,1), weight=1)#Konfigurasi baris didalam frame
         self.kartu_dua.grid_propagate(False)
@@ -96,15 +107,15 @@ class KegiatanPage(CTkFrame):
         self.label_datang.grid(row=0,
                            column=0,
                            padx=10,
-                           pady=0)
+                           pady=(6, 6))
 # isi KEGIATAN MENDATANG
         total_mendatang=self.get_kegiatan_mendatang()
         self.btn_mendatang = CTkButton(self.kartu_dua,
                                   text=f'Total kegiatan akan datang : {total_mendatang}\nKlik untuk melihat detail',
-                                  height=40,
+                                  height=70,
                                   corner_radius=10,
-                                  fg_color= "#42c64b",
-                                  hover_color= "#24fc03",
+                                  fg_color= "#4256c6",
+                                  hover_color= "#0356fc",
                                   text_color='black',
                                   font=('century gothic', 15, 'bold'),
                                   command=self.open_detail_kegiatan_mendatang
@@ -112,18 +123,22 @@ class KegiatanPage(CTkFrame):
         self.btn_mendatang.grid(row=1,
                            column=0,
                            padx=5,
-                           pady=5)
+                           pady=2)
 #=========================================================
 #Card 3 KEGIATAN SLESAI
         self.kartu_tiga=CTkFrame(self,
-                               height=80,
-                               fg_color="#85037C",)
+                               height=120,
+                               fg_color="#ffffff",
+                               width=800,
+                               border_width=2,
+                               border_color='#0611ad',)
         self.kartu_tiga.grid(row=3,
-                           column=0,
-                           columnspan=3,
+                           column=1,
+                           #columnspan=3,
                            padx=50,
-                           pady=1,
-                           sticky='nsew')
+                           pady=10,
+                           #sticky='nsew'
+                           )
         self.kartu_tiga.columnconfigure(0, weight=1)#Konfigurasi kolom didalam frame
         self.kartu_tiga.rowconfigure((0,1), weight=1)#Konfigurasi baris didalam frame
         self.kartu_tiga.grid_propagate(False)
@@ -137,15 +152,15 @@ class KegiatanPage(CTkFrame):
         self.label_selesai.grid(row=0,
                            column=0,
                            padx=10,
-                           pady=0)
+                           pady=(6,6))
 # isi KEGIATAN SLESAI
         total_selesai=self.get_kegiatan_selesai()
         self.btn_selesai = CTkButton(self.kartu_tiga,
                                   text=f'Total kegiatan selesai : {total_selesai}\nKlik untuk melihat detail',
-                                  height=40,
+                                  height=70,
                                   corner_radius=10,
-                                  fg_color= "#c442c6",
-                                  hover_color= "#fc03f8",
+                                  fg_color= "#4256c6",
+                                  hover_color= "#0356fc",
                                   text_color='black',
                                   font=('century gothic', 15, 'bold'),
                                   command=self.open_detail_kegiatan_selesai
@@ -153,18 +168,22 @@ class KegiatanPage(CTkFrame):
         self.btn_selesai.grid(row=1,
                            column=0,
                            padx=5,
-                           pady=5)
+                           pady=2)
 #=========================================================
 #Card 4 KEGIATAN Tak terlaksanana
         self.kartu_empat=CTkFrame(self,
-                               height=80,
-                               fg_color="#850303",)
+                               height=120,
+                               fg_color="#ffffff",
+                               width=800,
+                               border_width=2,
+                               border_color='#0611ad',)
         self.kartu_empat.grid(row=4,
-                           column=0,
-                           columnspan=3,
+                           column=1,
+                           #columnspan=3,
                            padx=50,
-                           pady=1,
-                           sticky='nsew')
+                           pady=10,
+                           #sticky='nsew'
+                           )
         self.kartu_empat.columnconfigure(0, weight=1)#Konfigurasi kolom didalam frame
         self.kartu_empat.rowconfigure((0,1), weight=1)#Konfigurasi baris didalam frame
         self.kartu_empat.grid_propagate(False)
@@ -178,15 +197,15 @@ class KegiatanPage(CTkFrame):
         self.label_tak_terlaksana.grid(row=0,
                            column=0,
                            padx=10,
-                           pady=0)
+                           pady=(6,6))
 # isi KEGIATAN tak terlaksana
         total_tak_terlaksana=self.get_kegiatan_tak_terlaksana()
         self.btn_tak_terlaksana = CTkButton(self.kartu_empat,
                                   text=f'Total kegiatan Tak terlaksana : {total_tak_terlaksana}\nKlik untuk melihat detail',
-                                  height=40,
+                                  height=70,
                                   corner_radius=10,
-                                  fg_color= "#c64242",
-                                  hover_color= "#fc0303",
+                                  fg_color= "#4256c6",
+                                  hover_color= "#0356fc",
                                   text_color='black',
                                   font=('century gothic', 15, 'bold'),
                                   command=self.open_detail_kegiatan_tak_terlaksana
@@ -194,7 +213,7 @@ class KegiatanPage(CTkFrame):
         self.btn_tak_terlaksana.grid(row=1,
                            column=0,
                            padx=5,
-                           pady=5)
+                           pady=2)
 #=========================================================
 #Fungsi fungsi membuka Pop Up
 #Fungsi membuka pop_up_total kegiatan

@@ -33,10 +33,10 @@ class AnggotaPage(CTkFrame):
                               anchor='center',
                               compound='left',
                               width=250,
-                              bg_color='yellow',
-                              text_color='#101873',
+                              bg_color='#0356fc',
+                              text_color='#ffffff',
                               pady=20)
-        self.judul.grid(row=0, column=0, sticky='ew', pady=20)
+        self.judul.grid(row=0, column=0, sticky='ew', pady=0)
 #Frame untuk tombol
 # 0 mengikuti konten
 # 1 mengikuti space

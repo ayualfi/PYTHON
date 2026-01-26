@@ -1,5 +1,8 @@
 from customtkinter import CTkFrame, CTkLabel, CTkButton
 from config.database import Database
+from pages.anggota import AnggotaPage
+from pages.kegiatan import KegiatanPage
+from pages.keuangan import KeuanganPage
 
 class DashboardPage(CTkFrame):
     def __init__(self, parent):
@@ -13,8 +16,7 @@ class DashboardPage(CTkFrame):
         self.judul=CTkLabel(self,
                             text='Dashboard',
                             text_color='black',
-                            font=('century gothic', 50, 'bold'),
-                            fg_color="#0356fc",
+                            font=('century gothic', 40, 'bold'),
                             height=100,
                             corner_radius=10
                             )
@@ -28,7 +30,8 @@ class DashboardPage(CTkFrame):
 #Card 1
         self.kartu_satu=CTkFrame(self,
                                height=220,
-                               fg_color="#030b85",)
+                               fg_color="#030b85",
+                               )
         self.kartu_satu.grid(row=1,
                            column=0,
                            padx=50,
@@ -39,7 +42,7 @@ class DashboardPage(CTkFrame):
 # Label anggota
         self.label_user = CTkLabel(self.kartu_satu,
                                   text='Anggota',
-                                  text_color='black',
+                                  text_color='#ffffff',
                                   anchor='center',
                                   font=('century gothic', 50, 'bold'),
         )
@@ -56,7 +59,8 @@ class DashboardPage(CTkFrame):
                                   fg_color= "#4256c6",
                                   hover_color= "#0356fc",
                                   text_color='black',
-                                  font=('century gothic', 25, 'bold')
+                                  font=('century gothic', 25, 'bold'),
+                                  command=lambda:self.load_page(AnggotaPage)
         )
         self.isi_user.grid(row=1,
                            column=0,
@@ -77,7 +81,7 @@ class DashboardPage(CTkFrame):
 # Label kegiatan
         self.label_kegiatan = CTkLabel(self.kartu_dua,
                                   text='Kegiatan',
-                                  text_color='black',
+                                  text_color='#ffffff',
                                   anchor='center',
                                   font=('century gothic', 50, 'bold'),
         )
@@ -95,7 +99,8 @@ class DashboardPage(CTkFrame):
                                   hover_color= "#0356fc",
                                   text_color='black',
                                   font=('century gothic', 25, 'bold'),
-                                  state='normal'
+                                  state='normal',
+                                  command=lambda:self.load_page(KegiatanPage)
         )
         self.isi_kegiatan.grid(row=1,
                            column=0,
@@ -116,7 +121,7 @@ class DashboardPage(CTkFrame):
 # Label keuangan
         self.label_keuangan = CTkLabel(self.kartu_tiga,
                                   text='Keuangan',
-                                  text_color='black',
+                                  text_color='#ffffff',
                                   anchor='center',
                                   font=('century gothic', 50, 'bold'),
         )
@@ -136,7 +141,8 @@ class DashboardPage(CTkFrame):
                                   hover_color= "#0356fc",
                                   text_color='black',
                                   font=('century gothic', 25, 'bold'),
-                                  state='normal'
+                                  state='normal',
+                                  command=lambda:self.load_page(KeuanganPage)
         )
         self.isi_keuangan.grid(row=1,
                            column=0,
@@ -172,4 +178,9 @@ class DashboardPage(CTkFrame):
         cursor.execute('SELECT COUNT(*) from kegiatan')
         total=cursor.fetchone()[0]
         return total
-    
+# Metod untuk memanggil page
+    def load_page(self, page_class):
+        for widget in self.master.winfo_children():
+            widget.destroy()
+        page_class(self.master).pack(fill="both", expand=True)
+

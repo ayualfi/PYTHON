@@ -1,4 +1,5 @@
-from customtkinter import CTkFrame, CTkLabel, CTkButton
+from customtkinter import CTkFrame, CTkLabel, CTkButton, CTkImage
+from PIL import Image
 from config.database import Database
 from pages.anggota import AnggotaPage
 from pages.kegiatan import KegiatanPage
@@ -26,7 +27,20 @@ class DashboardPage(CTkFrame):
                         padx=50,
                         pady=10,
                         sticky='nsew')
-#=========================================
+# #=========================================
+#         self.bg_img=CTkImage(
+#             light_image=Image.open("11-WebDev/assets/logoWebDevComm.png"),
+#             dark_image=Image.open("11-WebDev/assets/logoWebDevComm.png"),
+#             size=(1200, 1000)
+#         )
+# #=========================================
+#         self.bg_label=CTkLabel(
+#             self,
+#             image=self.bg_img,
+#             text=""
+#         )
+#         self.bg_label.place(x=0, y=0, relwidth=1, relheight=1)
+# #=====================================
 #Card 1
         self.kartu_satu=CTkFrame(self,
                                height=220,
@@ -56,9 +70,9 @@ class DashboardPage(CTkFrame):
                                   text='Total anggota: '+str(total),
                                   height=50,
                                   corner_radius=10,
-                                  fg_color= "#4256c6",
-                                  hover_color= "#0356fc",
-                                  text_color='black',
+                                  fg_color= "#030b85",
+                                  hover_color= "#5b5b5b",
+                                  text_color='white',
                                   font=('century gothic', 25, 'bold'),
                                   command=lambda:self.load_page(AnggotaPage)
         )
@@ -95,9 +109,9 @@ class DashboardPage(CTkFrame):
                                   text='Total kegiatan: '+str(total),
                                   height=50,
                                   corner_radius=10,
-                                  fg_color= "#4256c6",
-                                  hover_color= "#0356fc",
-                                  text_color='black',
+                                  fg_color= "#030b85",
+                                  hover_color= "#5b5b5b",
+                                  text_color='white',
                                   font=('century gothic', 25, 'bold'),
                                   state='normal',
                                   command=lambda:self.load_page(KegiatanPage)
@@ -137,9 +151,9 @@ class DashboardPage(CTkFrame):
                                   text=f"Saldo:{saldo}\nMasuk: {masuk}\nKeluar: {keluar}",
                                   height=50,
                                   corner_radius=10,
-                                  fg_color= "#4256c6",
-                                  hover_color= "#0356fc",
-                                  text_color='black',
+                                  fg_color= "#030b85",
+                                  hover_color= "#5b5b5b",
+                                  text_color='white',
                                   font=('century gothic', 25, 'bold'),
                                   state='normal',
                                   command=lambda:self.load_page(KeuanganPage)

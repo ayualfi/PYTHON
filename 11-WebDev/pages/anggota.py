@@ -1,4 +1,5 @@
-from customtkinter import CTkFrame, CTkLabel, CTkEntry, CTkButton, CTkToplevel
+from customtkinter import CTkFrame, CTkLabel, CTkEntry, CTkButton, CTkImage, CTkToplevel
+from PIL import Image
 from tkinter import messagebox, ttk
 from config.database import Database
 
@@ -28,7 +29,7 @@ class AnggotaPage(CTkFrame):
         self.frame_left.columnconfigure(5, weight=0)
 #judul
         self.judul = CTkLabel(self.frame_left,
-                              text='Manajemen\n Pengguna',
+                              text='Manajemen\n Anggota',
                               font=('century gothic', 20, 'bold'),
                               anchor='center',
                               compound='left',
@@ -37,6 +38,20 @@ class AnggotaPage(CTkFrame):
                               text_color='#ffffff',
                               pady=20)
         self.judul.grid(row=0, column=0, sticky='ew', pady=0)
+# #=========================================
+#         self.bg_img=CTkImage(
+#             light_image=Image.open("11-WebDev/assets/logoWebDevComm.png"),
+#             dark_image=Image.open("11-WebDev/assets/logoWebDevComm.png"),
+#             size=(1200, 1000)
+#         )
+# #=========================================
+#         self.bg_label=CTkLabel(
+#             self,
+#             image=self.bg_img,
+#             text=""
+#         )
+#         self.bg_label.place(x=0, y=0, relwidth=1, relheight=1)
+# #=====================================
 #Frame untuk tombol
 # 0 mengikuti konten
 # 1 mengikuti space

@@ -1,4 +1,5 @@
-from customtkinter import CTkFrame, CTkLabel, CTkButton, CTkToplevel, CTkEntry, CTkOptionMenu
+from customtkinter import CTkFrame, CTkLabel, CTkButton, CTkToplevel, CTkImage, CTkEntry, CTkOptionMenu
+from PIL import Image
 from tkinter import messagebox, ttk
 from config.database import Database
 
@@ -33,6 +34,20 @@ class KegiatanPage(CTkFrame):
         self.grid_rowconfigure(2, weight=1)
         self.grid_rowconfigure(3, weight=1)
         self.grid_rowconfigure(4, weight=1)
+# #=========================================
+#         self.bg_img=CTkImage(
+#             light_image=Image.open("11-WebDev/assets/logoWebDevComm.png"),
+#             dark_image=Image.open("11-WebDev/assets/logoWebDevComm.png"),
+#             size=(1200, 1000)
+#         )
+# #=========================================
+#         self.bg_label=CTkLabel(
+#             self,
+#             image=self.bg_img,
+#             text=""
+#         )
+#         self.bg_label.place(x=0, y=0, relwidth=1, relheight=1)
+# #=====================================
 #=========================================
 #Card 1 SELURUH KEGIATAN
         self.kartu_satu=CTkFrame(self,
@@ -78,7 +93,7 @@ class KegiatanPage(CTkFrame):
         self.btn_total.grid(row=1,
                            column=0,
                            padx=5,
-                           pady=2)
+                           pady=1)
 #==================================================
 #Card 2 KEGIATAN MENDATANG
         self.kartu_dua=CTkFrame(self,

@@ -1,4 +1,5 @@
-from customtkinter import CTk, CTkFrame, CTkButton, CTkLabel
+from customtkinter import CTk, CTkFrame, CTkButton, CTkLabel, CTkImage
+from PIL import Image
 from pages.dashboard import DashboardPage
 from pages.anggota import AnggotaPage
 from pages.kegiatan import KegiatanPage
@@ -7,7 +8,7 @@ from pages.keuangan import KeuanganPage
 class MainApp(CTk):
     def __init__(self):
         super().__init__()
-        self.title('Aplikasi Kasir')
+        self.title('Aplikasi UKM')
         self.geometry('1200x600+800+600')
         # self.geometry('800x600')
         # self.attributes('-fullscreen', True)
@@ -32,12 +33,20 @@ class MainApp(CTk):
                               expand=True, 
                               pady=0, 
                               padx=0)
-# judul
+#Untuk gambar
+        self.logo_img=CTkImage(
+            light_image=Image.open("11-WebDev/assets/logoWebDevComm.png"),
+            dark_image=Image.open("11-WebDev/assets/logoWebDevComm.png"),
+            size=(80, 80)
+        )
+# judull
         self.judul = CTkLabel(
             self.top_frame,
-            text='WebDev Community',
+            text='   Web Development Community',
+            image=self.logo_img,
+            compound='left',
             text_color='#101873',
-            font=('century gothic', 24, 'bold')
+            font=('century gothic', 20, 'bold')
         )
         self.judul.pack(side='left', padx=20)
 # keuangan button

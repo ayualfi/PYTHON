@@ -60,11 +60,6 @@ button:hover{
     flex-direction: column;
 }
 
-.dosen{
-   display: flex;
-   flex-direction: column; 
-}
-
 table{
     border-collapse: collapse;
     width: 50%;

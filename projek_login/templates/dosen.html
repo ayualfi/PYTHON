@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dosen</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="dosen">
+    <h2>Data Nilai</h2>
+    <table border="1px">
+        <tr>
+            <th>Nama</th>
+            <th>Nilai</th>
+            <th>Aksi</th>
+        </tr>
+        {% for n in nilai %}
+        <tr>
+            <form action="/update_nilai" method="POST">
+                <td>{{ n.nama }}</td>
+
+                <td>
+                    <input type="text" name="nilai" value="{{ n.nilai}}">
+                </td>
+
+                <td>
+                    <input type="hidden" name="id" value="{{ n.id_nilai }}">
+                    <button type="submit">Update</button>
+                </td>
+            </form>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

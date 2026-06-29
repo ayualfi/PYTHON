@@ -14,6 +14,7 @@ def achievement(request):
 def education(request):
   return render(request, 'mahasiswa/education.html')
 def family(request):
+  
   return render(request, 'mahasiswa/family.html')
 def product(request):
   return render(request, 'mahasiswa/product.html')

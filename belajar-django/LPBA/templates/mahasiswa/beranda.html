@@ -1,40 +1,248 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Beranda</title>
-  <style>
-    nav{
-      display:flex;
-      gap: 20px;font-size: 18px;
-    }
-    nav a{
-      text-decoration: none;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>Home</h1>
-      <nav>
-        <a href="{% url 'beranda_page'%}">Home</a>
-        <a href="{% url 'about_page'%}">About</a>
-        <a href="{% url 'news_page'%}">News</a>
-        <a href="{% url 'contact_page'%}">Contact</a>
-        <a href="{% url 'achievement_page'%}">Achiement</a>
-        <a href="{% url 'education_page'%}">Education</a>
-        <a href="{% url 'family_page'%}">Family</a>
-        <a href="{% url 'product_page'%}">Projects</a>
-        <a href="{% url 'skill_page'%}">Skill</a>
-        <a href="{% url 'others_page'%}">Others</a>
-      </nav>
-  </header>
-  <ul>
-    <li>k</li>
-    <li>k</li>
-    <li>k</li>
-    <li>k</li>
-  </ul>
-</body>
-</html>
+{% extends 'base.html' %}
+{% block content %}
+<div class="app">
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <!-- ── Main ───────────────────────────────────────── -->
+  <main class="main">
+    
+
+    <section class="content">
+      <!-- Welcome -->
+      <div class="welcome">
+        <div>
+          <h1>Selamat pagi, <span>Research!</span> 👋</h1>
+          <p>Berikut ringkasan performa bisnis Anda hari ini. Semua angka diperbarui secara langsung untuk membantu Anda mengambil keputusan lebih cepat.</p>
+        </div>
+        <select class="period-select" id="periodSelect" aria-label="Pilih periode">
+          <option>Minggu ini</option>
+          <option>Bulan ini</option>
+          <option>3 bulan terakhir</option>
+          <option>Tahun ini</option>
+        </select>
+      </div>
+
+      <!-- Stat cards -->
+      <section class="stats-grid">
+        <article class="card stat-card primary">
+          <div class="stat-top">
+            <span class="stat-name">Total Pendapatan</span>
+            <span class="stat-icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M3 17l6-6 4 4 8-9"/><path d="M15 6h6v6"/>
+              </svg>
+            </span>
+          </div>
+          <div class="stat-value">Rp 48,6 jt</div>
+          <div class="stat-growth"><span class="up">↗ 12,5%</span><span class="comparison">dari minggu lalu</span></div>
+        </article>
+
+        <article class="card stat-card cyan">
+          <div class="stat-top">
+            <span class="stat-name">Total Pesanan</span>
+            <span class="stat-icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M6 3h12l2 5H4l2-5Z"/>
+                <path d="M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8"/>
+                <path d="M9 12h6"/>
+              </svg>
+            </span>
+          </div>
+          <div class="stat-value">1.284</div>
+          <div class="stat-growth"><span class="up">↗ 8,2%</span><span class="comparison">dari minggu lalu</span></div>
+        </article>
+
+        <article class="card stat-card orange">
+          <div class="stat-top">
+            <span class="stat-name">Pelanggan Baru</span>
+            <span class="stat-icon">
+              <svg viewBox="0 0 24 24">
+                <circle cx="9" cy="8" r="3"/>
+                <path d="M3 21v-1a6 6 0 0 1 12 0v1"/>
+                <path d="M18 8v6"/><path d="M15 11h6"/>
+              </svg>
+            </span>
+          </div>
+          <div class="stat-value">324</div>
+          <div class="stat-growth"><span class="up">↗ 15,3%</span><span class="comparison">dari minggu lalu</span></div>
+        </article>
+
+        <article class="card stat-card pink">
+          <div class="stat-top">
+            <span class="stat-name">Tingkat Konversi</span>
+            <span class="stat-icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M4 19V5"/><path d="M4 19h16"/>
+                <path d="M8 15v-3"/><path d="M12 15V8"/><path d="M16 15V5"/>
+              </svg>
+            </span>
+          </div>
+          <div class="stat-value">4,82%</div>
+          <div class="stat-growth"><span class="down">↘ 1,1%</span><span class="comparison">dari minggu lalu</span></div>
+        </article>
+      </section>
+
+      <!-- Dashboard grid: chart + target -->
+      <section class="dashboard-grid">
+        <article class="card chart-card">
+          <div class="card-title-row">
+            <div>
+              <div class="card-title">Ringkasan Penjualan</div>
+              <div class="card-subtitle">Performa pendapatan dalam 7 hari terakhir</div>
+            </div>
+            <div class="chart-tabs">
+              <button class="chart-tab active" data-range="week">Mingguan</button>
+              <button class="chart-tab" data-range="month">Bulanan</button>
+            </div>
+          </div>
+          <div class="chart-wrap">
+            <canvas id="salesChart"></canvas>
+          </div>
+        </article>
+
+        <article class="card target-card">
+          <div class="card-title-row">
+            <div>
+              <div class="card-title">Target Bulanan</div>
+              <div class="card-subtitle">Progres pendapatan Juni 2026</div>
+            </div>
+            <span class="status process">On track</span>
+          </div>
+          <div class="target-ring-wrap">
+            <div class="ring">
+              <div class="ring-text"><strong>77%</strong><span>Tercapai</span></div>
+            </div>
+          </div>
+          <div class="target-detail">
+            <div class="target-row">
+              <span class="legend"><i class="legend-dot"></i> Pendapatan saat ini</span>
+              <strong>Rp 154,8 jt</strong>
+            </div>
+            <div class="target-row">
+              <span class="legend"><i class="legend-dot soft"></i> Sisa target</span>
+              <strong>Rp 45,2 jt</strong>
+            </div>
+            <div class="target-row">
+              <span>Target bulan ini</span>
+              <strong>Rp 200 jt</strong>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- Lower grid: table + activity -->
+      <section class="lower-grid">
+        <article class="card table-card">
+          <div class="table-header">
+            <div>
+              <div class="card-title">Pesanan Terbaru</div>
+              <div class="card-subtitle">Transaksi masuk hari ini</div>
+            </div>
+            <a href="#" id="ordersLink">Lihat semua →</a>
+          </div>
+          <div style="overflow: auto">
+            <table class="order-table">
+              <thead>
+                <tr>
+                  <th>Pelanggan</th>
+                  <th>ID Pesanan</th>
+                  <th>Tanggal</th>
+                  <th>Total</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="customer">
+                      <span class="mini-avatar av1">NS</span>
+                      <span><strong>Nadia Safitri</strong><small>nadia@email.com</small></span>
+                    </div>
+                  </td>
+                  <td>#ORD-4289</td>
+                  <td>Hari ini, 09:42</td>
+                  <td><strong>Rp 1.250.000</strong></td>
+                  <td><span class="status success">Selesai</span></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="customer">
+                      <span class="mini-avatar av2">RA</span>
+                      <span><strong>Rizky Ananda</strong><small>rizky@email.com</small></span>
+                    </div>
+                  </td>
+                  <td>#ORD-4288</td>
+                  <td>Hari ini, 09:13</td>
+                  <td><strong>Rp 875.000</strong></td>
+                  <td><span class="status process">Diproses</span></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="customer">
+                      <span class="mini-avatar av3">DS</span>
+                      <span><strong>Dewi Sartika</strong><small>dewi@email.com</small></span>
+                    </div>
+                  </td>
+                  <td>#ORD-4287</td>
+                  <td>Hari ini, 08:56</td>
+                  <td><strong>Rp 2.145.000</strong></td>
+                  <td><span class="status pending">Menunggu</span></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="customer">
+                      <span class="mini-avatar av4">FA</span>
+                      <span><strong>Fauzan Akbar</strong><small>fauzan@email.com</small></span>
+                    </div>
+                  </td>
+                  <td>#ORD-4286</td>
+                  <td>Kemarin, 22:15</td>
+                  <td><strong>Rp 640.000</strong></td>
+                  <td><span class="status success">Selesai</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <article class="card activity-card">
+          <div class="activity-header">
+            <div>
+              <div class="card-title">Aktivitas Terbaru</div>
+              <div class="card-subtitle">Pembaruan dari sistem Anda</div>
+            </div>
+            <button class="icon-button" id="activityMore" style="width:32px;height:32px">•••</button>
+          </div>
+          <ul class="activity-list">
+            <li class="activity-item">
+              <span class="activity-icon purple">🛍️</span>
+              <strong>Pesanan baru dari Nadia Safitri</strong>
+              <p>Pesanan #ORD-4289 bernilai Rp 1.250.000 <span class="activity-time">• 5 menit lalu</span></p>
+            </li>
+            <li class="activity-item">
+              <span class="activity-icon green">✓</span>
+              <strong>Pembayaran berhasil diterima</strong>
+              <p>Transaksi #TRX-8271 telah dikonfirmasi <span class="activity-time">• 24 menit lalu</span></p>
+            </li>
+            <li class="activity-item">
+              <span class="activity-icon orange">◔</span>
+              <strong>Stok produk mulai menipis</strong>
+              <p>3 produk memerlukan penambahan stok <span class="activity-time">• 1 jam lalu</span></p>
+            </li>
+            <li class="activity-item">
+              <span class="activity-icon pink">♙</span>
+              <strong>Pelanggan baru bergabung</strong>
+              <p>Dewi Sartika telah membuat akun baru <span class="activity-time">• 2 jam lalu</span></p>
+            </li>
+          </ul>
+        </article>
+      </section>
+    </section>
+  </main>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast">
+  <span class="toast-mark">✓</span>
+  <span id="toastText">Pembaruan berhasil dilakukan.</span>
+</div>
+{% endblock %}

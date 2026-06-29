@@ -1,0 +1,115 @@
+<!-- ── Sidebar ─────────────────────────────────────── -->
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-mark"></div>
+        <div class="brand-name">nusa<small>ADMIN PANEL</small></div>
+      </div>
+
+      <div class="nav-label">Menu utama</div>
+      <ul class="nav-list">
+        <li>
+          <button class="nav-item active" data-page="Dashboard">
+            <span class="nav-icon">
+              <svg viewBox="0 0 24 24">
+                <rect x="3"  y="3"  width="7" height="7" rx="1"/>
+                <rect x="14" y="3"  width="7" height="7" rx="1"/>
+                <rect x="3"  y="14" width="7" height="7" rx="1"/>
+                <rect x="14" y="14" width="7" height="7" rx="1"/>
+              </svg>
+            </span>
+            Dashboard
+          </button>
+        </li>
+        <li>
+          <a href="{% url 'about_page' %}" class="nav-item" data-page="Analitik">
+            <span class="nav-icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M4 19V9"/><path d="M10 19V5"/><path d="M16 19v-7"/><path d="M22 19V3"/>
+              </svg>
+            </span>
+            Analitik
+          </a>
+        </li>
+        <li>
+          <button class="nav-item" data-page="Pesanan">
+            <span class="nav-icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M6 3h12l2 5H4l2-5Z"/>
+                <path d="M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8"/>
+                <path d="M9 12h6"/>
+              </svg>
+            </span>
+            Pesanan
+            <span class="badge">12</span>
+          </button>
+        </li>
+        <li>
+          <button class="nav-item" data-page="Pelanggan">
+            <span class="nav-icon">
+              <svg viewBox="0 0 24 24">
+                <circle cx="9" cy="8" r="3"/>
+                <path d="M3 21v-1a6 6 0 0 1 12 0v1"/>
+                <path d="M17 11a3 3 0 0 0 0-6"/>
+                <path d="M21 21v-1a6 6 0 0 0-3-5.2"/>
+              </svg>
+            </span>
+            Pelanggan
+          </button>
+        </li>
+        <li>
+          <button class="nav-item" data-page="Produk">
+            <span class="nav-icon">
+              <svg viewBox="0 0 24 24">
+                <path d="m21 16-9 5-9-5V8l9-5 9 5v8Z"/>
+                <path d="m3 8 9 5 9-5"/>
+                <path d="M12 13v8"/>
+              </svg>
+            </span>
+            Produk
+          </button>
+        </li>
+      </ul>
+
+      <div class="nav-label">Manajemen</div>
+      <ul class="nav-list">
+        <li>
+          <button class="nav-item" data-page="Keuangan">
+            <span class="nav-icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/><path d="M8 3v18"/>
+              </svg>
+            </span>
+            Keuangan
+          </button>
+        </li>
+        <li>
+          <button class="nav-item" data-page="Laporan">
+            <span class="nav-icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/>
+                <path d="M14 2v6h6"/>
+                <path d="M8 13h8"/><path d="M8 17h5"/>
+              </svg>
+            </span>
+            Laporan
+          </button>
+        </li>
+        <li>
+          <button class="nav-item" data-page="Pengaturan">
+            <span class="nav-icon">
+              <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="3"/>
+              </svg>
+            </span>
+            Pengaturan
+          </button>
+        </li>
+      </ul>
+
+      <div class="support-card">
+        <div class="support-icon">✦</div>
+        <strong>Butuh bantuan?</strong>
+        <p>Tim kami siap membantu kebutuhan administrasi Anda.</p>
+        <button type="button" id="helpButton">Pusat Bantuan</button>
+      </div>
+    </aside>

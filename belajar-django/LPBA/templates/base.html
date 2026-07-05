@@ -61,7 +61,9 @@
     }
     button, input { font: inherit; }
     button { cursor: pointer; border: 0; }
-
+    a{
+      text-decoration: none;
+    }
     /* ── Layout ──────────────────────────────────────────── */
     .app  { min-height: 100vh; display: flex; }
     .main { width: 100%; margin-left: 260px; min-width: 0; }
@@ -143,7 +145,10 @@
       align-items: center;
       transition: .2s ease;
     }
-    .nav-item:hover  { color: #fff; background: rgba(255, 255, 255, .07); }
+    .nav-item:hover  { 
+      color: #fff; 
+      background: rgba(255, 255, 255, .07); }
+      
     .nav-item.active {
       color: #fff;
       font-weight: 750;
@@ -430,11 +435,17 @@
 <body>
   {% include 'navbar.html' %}
   {% include 'topbar.html' %}
+   
   {% block content %}
 
   {% endblock %}
 
   <script>
+    const pageTitle = $("#pageTitle");
+
+    if (pageTitle) {
+        pageTitle.textContent = page;
+    }
     // ── Helpers ──────────────────────────────────────────
     const $  = (sel, root = document) => root.querySelector(sel);
     const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
@@ -590,8 +601,8 @@
 
     // Sidebar nav
     $$(".nav-item").forEach(item => item.addEventListener("click", () => {
-      $$(".nav-item").forEach(btn => btn.classList.remove("active"));
-      item.classList.add("active");
+      // $$(".nav-item").forEach(btn => btn.classList.remove("active"));
+      // item.classList.add("active");
       const page = item.dataset.page;
       $("#pageTitle").textContent = page;
       if (page !== "Dashboard") toast("Menu " + page + " berhasil dipilih.");

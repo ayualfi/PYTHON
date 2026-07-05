@@ -1,34 +1,48 @@
 <header class="topbar">
-      <div class="head-left">
+    <div class="head-left">
         <button class="mobile-menu icon-button" id="mobileMenu" aria-label="Buka menu">
-          <svg viewBox="0 0 24 24">
-            <path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h16"/>
-          </svg>
+            <svg viewBox="0 0 24 24">
+                <path d="M4 7h16"/>
+                <path d="M4 12h16"/>
+                <path d="M4 17h16"/>
+            </svg>
         </button>
+
         <div>
-          <div class="page-title" id="pageTitle">Dashboard</div>
-          <div class="crumb">Nusa Admin <span>/ Beranda</span></div>
+            <div class="page-title">
+                {{ page_title|default:"Dashboard" }}
+            </div>
+
+            <div class="crumb">
+                Nusa Admin
+                <span>
+                    / {{ breadcrumb|default:"Beranda" }}
+                </span>
+            </div>
         </div>
-      </div>
-      <div class="head-actions">
+    </div>
+
+    <div class="head-actions">
         <button class="icon-button" id="themeButton" aria-label="Ubah tema">
-          <svg viewBox="0 0 24 24">
-            <path d="M12 3a6.4 6.4 0 1 0 9 9A8 8 0 1 1 12 3Z"/>
-          </svg>
+            <svg viewBox="0 0 24 24">
+                <path d="M12 3a6.4 6.4 0 1 0 9 9A8 8 0 1 1 12 3Z"/>
+            </svg>
         </button>
+
         <button class="icon-button" id="notificationButton" aria-label="Notifikasi">
-          <span class="notification-dot"></span>
-          <svg viewBox="0 0 24 24">
-            <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"/>
-            <path d="M10 21h4"/>
-          </svg>
+            <span class="notification-dot"></span>
+            <svg viewBox="0 0 24 24">
+                <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"/>
+                <path d="M10 21h4"/>
+            </svg>
         </button>
+
         <div class="user">
-          <div class="avatar">AR</div>
-          <div class="user-meta">
-            <strong>Admin Research</strong>
-            <small>Administrator</small>
-          </div>
+            <div class="avatar">AR</div>
+            <div class="user-meta">
+                <strong>{{ request.user.username|default:"Admin Research" }}</strong>
+                <small>Administrator</small>
+            </div>
         </div>
-      </div>
-    </header>
+    </div>
+</header>

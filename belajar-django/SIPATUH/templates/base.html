@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Base{% endblock title %}</title>
+</head>
+<style>
+  body{
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .navTopbar{
+    display: flex;
+    justify-content: center;
+  }
+  .navTopbar ul{
+    display: flex;
+    list-style: none;
+    gap: 20px;
+  }
+  .navTopbar ul li a{
+    text-decoration: none;
+    font-size: 15px;
+    color: black;
+  }
+  /* footer */
+  .footer{
+    text-align: center;
+  }
+</style>
+<body>
+  {% include 'topbar.html' %}
+   
+  {% block content %}
+
+  {% endblock %}
+
+  {% include 'footer.html' %}
+</body>
+</html>
